@@ -8,7 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
+//dist    // comentamos esta linea para que no se ignore la carpeta dist y asi poder subir el proyecto a railway
 dist-ssr
 *.local
 
