@@ -44,6 +44,6 @@ func main() {
 	if PORT == "" {
 	  PORT = "3000"
 	}
-	log.Fatal(app.Listen(":" + PORT))      // Iniciamos el servidor y si hay un error lo mostramos en la consola
+	log.Fatal(app.Listen("0.0.0.0:"+ PORT))      // Iniciamos el servidor y si hay un error lo mostramos en la consola
 	fmt.Println("Server is running on port", PORT)
 }
