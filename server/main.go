@@ -4,14 +4,13 @@ import (
 	"fmt"
 	"log"
 	"os"
-
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 )
 
 func main() {
 	app := fiber.New()                // Creamos una instancia de la aplicación de Fiber
-	app.Static("/", "../client/dist") // Establecemos la ruta de la carpeta de los archivos estáticos para el frontend en este caso desde (React)
+	app.Static("/", "./dist") // Establecemos la ruta de la carpeta de los archivos estáticos para el frontend en este caso desde (React)
 
 	app.Use(cors.New(cors.Config{   // Configuración de CORS para permitir el acceso a la API desde cualquier origen
 		AllowOrigins: "*",
