@@ -10,9 +10,9 @@ import (
 
 func main() {
 	app := fiber.New()                // Creamos una instancia de la aplicación de Fiber
-	app.Static("/", "./dist") // Establecemos la ruta de la carpeta de los archivos estáticos para el frontend en este caso desde (React)
+	app.Static("/", "../dist")         // Establecemos la ruta de la carpeta de los archivos estáticos para el frontend en este caso desde (React)
 
-	app.Use(cors.New(cors.Config{   // Configuración de CORS para permitir el acceso a la API desde cualquier origen
+	app.Use(cors.New(cors.Config{    // Configuración de CORS para permitir el acceso a la API desde cualquier origen
 		AllowOrigins: "*",
 		AllowHeaders: "Origin, Content-Type, Accept",
 	}))
@@ -43,6 +43,6 @@ func main() {
 	if PORT == "" {
 	  PORT = "3000"
 	}
-	log.Fatal(app.Listen("0.0.0.0:"+ PORT))      // Iniciamos el servidor y si hay un error lo mostramos en la consola
+	log.Fatal(app.Listen(":"+ PORT))      // Iniciamos el servidor y si hay un error lo mostramos en la consola
 	fmt.Println("Server is running on port", PORT)
 }
