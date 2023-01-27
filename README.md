@@ -8,10 +8,7 @@ go mod init github.com/ivanes285/GOReactMongo
 ```
 
 ### Instalacion de modulos
-- Instalamos un modulo llamado CompileDaemon equivalente(nodemon en js) con el comando 
-```
-go get github.com/githubnemo/CompileDaemon
-```
+
 - Instalamos un framework llamado fiber equivalente(express en js) para trabajar con go
 ```
 go get github.com/gofiber/fiber/v2
@@ -29,7 +26,4 @@ o tambien
 ```
  go run .\main.go
 ```
-- Para evitar parar el servidor y volver a ejutar para aplicar cambios hacemos uso del modulo CompileDaemon y ejecutamos el comando 
-```
-CompileDaemon -command="go run ."
-```
+
