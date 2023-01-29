@@ -1,4 +1,3 @@
-import "./app.css";
 
 function App() {
   const fechatData = async () => {
