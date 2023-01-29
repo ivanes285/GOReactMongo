@@ -1,9 +1,10 @@
 
+
 function App() {
   const fechatData = async () => {
     const response = await fetch("http://127.0.0.1:3000/api/v1/users");
     const data = await response.json();
-    console.log(data);   
+   console.log(data);
   };
 
   return (
@@ -14,4 +15,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
