@@ -8,8 +8,8 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-//dist    // comentamos esta linea para que no se ignore la carpeta dist y asi poder subir el proyecto a railway
-dist-ssr  
+dist
+dist-ssr
 *.local
 
 # Editor directories and files

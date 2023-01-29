@@ -10,7 +10,7 @@ import (
 
 func main() {
 	app := fiber.New()                // Creamos una instancia de la aplicación de Fiber
-	app.Static("/", "../cliente/dist")         // Establecemos la ruta de la carpeta de los archivos estáticos para el frontend en este caso desde (React)
+	app.Static("/", "../client/dist")         // Establecemos la ruta de la carpeta de los archivos estáticos para el frontend en este caso desde (React)
 
 	app.Use(cors.New(cors.Config{    // Configuración de CORS para permitir el acceso a la API desde cualquier origen
 		AllowOrigins: "*",
@@ -20,7 +20,7 @@ func main() {
 	//Routes
 	app.Get("/api/v1/users", func(c *fiber.Ctx) error {
 		return c.JSON(fiber.Map{
-			"message": "Hello, World!",
+			"message": "Get users",
 		})
 	})
 
