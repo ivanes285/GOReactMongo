@@ -41,4 +41,24 @@ o tambien
  - Ya que el proyecto esta desplegado en railway podemos acceder a el a travez de la siguiente url
  ```
  https://goreactmongo-production.up.railway.app/
- ```   
+ ``` 
+ 
+ ## MOGODB
+ - Usamos docker para trabajar con mongodb, para eso debemos tener instalado docker y posteriormente ejecutamos el comando para crear container
+ ```
+ docker run --name gomongo -p 27017:27017 -d mongo
+ ```
+ - Instalamos paquete para leer una cadena de conexión de MongoDB desde una variable de entorno
+ ```
+ go get github.com/joho/godotenv
+ ```
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
