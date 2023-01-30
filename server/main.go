@@ -10,7 +10,7 @@ import (
 
 func main() {
 	app := fiber.New()            // Creamos una instancia de la aplicación de Fiber
-	app.Static("/", "../client/dist")    // Establecemos los archivos estáticos para el frontend en este caso desde (React)
+	app.Static("/", "../dist")    // Establecemos los archivos estáticos para el frontend en este caso desde (React)
 
 	app.Use(cors.New(cors.Config{ // Configuración de CORS para permitir el acceso a la API desde cualquier origen
 		AllowOrigins: "*",
