@@ -23,12 +23,12 @@ go get github.com/gofiber/fiber/v2
  ```
  go install github.com/cosmtrek/air@latest
  ```
- ### uso del moduolo air
+ ### Uso del mÓdulo air
  - En la carpeta raiz del server ejecutamos en la terminal el comando
  ```
  air .
  ```
-## Ejecucion
+## Ejecución
 - Podemos compilar de forma normal con el comando 
 ```
 go run .
