@@ -1,5 +1,7 @@
 # GOReactMongo
 
+# SERVER
+
 ## Iniciamos el proyecto go con el comando
 
 - go mod init ES EQUIVALENTE en node a npm int  sin embargo nos pide ingresar la direccion de un repositorio donde se va alojar
@@ -59,7 +61,15 @@ o tambien
  go get github.com/joho/godotenv
  ```
  
- 
+ # CLIENT
+ - Usamos vite y typeScript para crear el proyecto frontend 
+ - Por alguna razon la configuracion de proxy en el vite.config para establecer la url del server, dio error en el server al momento de comprobar las peticiones http, por lo que se opto por usar una variable de entornor en vite en un archivo .env  para la url, sin embargo hay que tomar en cuenta que en vite se maneja distinto, incluso desde la declaracion que debe empezar por VITE como se muestra en la primera linea , y se lo llama como se muestra en la segunda linea
+ ```
+ VITE_URLSERVER=http://localhost:3000/api/v1
+ ```
+ ```
+  await axios.post(import.meta.env.VITE_URLSERVER+"/users"); 
+ ```
  
  
  
