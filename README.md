@@ -1,15 +1,17 @@
 # GOReactMongo
 
+# SERVER
+
 ## Iniciamos el proyecto go con el comando
 
-- go mod init ES EQUIVALENTE en node a npm int  sin embargo nos pide ingresar la direccion de un repositorio donde se va alojar
+- go mod init ES EQUIVALENTE en node a npm int  sin embargo nos pide ingresar la ruta de su módulo, es decir la direccion de un repositorio donde se va alojar, Si se publica este módulo, debe ser una ruta desde la cual las herramientas de Go puedan permitir descargar su módulo.
 ```
 go mod init github.com/ivanes285/GOReactMongo  
 ```
 
 ### Instalacion de modulos
 
-- Instalamos un framework llamado fiber equivalente(express en js) para trabajar con go
+- Instalamos un framework llamado fiber equivalente(express en nodejs) para trabajar con go
 ```
 go get github.com/gofiber/fiber/v2
 ```
@@ -17,7 +19,16 @@ go get github.com/gofiber/fiber/v2
 ```
  "github.com/gofiber/fiber/v2/middleware/cors"
 ```
-### Ejecucion
+- Para evitar parar el servidor y de nuevo ejecutarlo para aplicar los cambios se instalo el siguiente modulo equivalente (nodemon en nodejs)
+ ```
+ go install github.com/cosmtrek/air@latest
+ ```
+ ### Uso del mÓdulo air
+ - En la carpeta raiz del server ejecutamos en la terminal el comando
+ ```
+ air .
+ ```
+## Ejecución
 - Podemos compilar de forma normal con el comando 
 ```
 go run .
@@ -38,7 +49,33 @@ o tambien
  ```
   app.Static("/", "../client/dist") 
  ```
+ ## Preview Deploy in Railway
  - Ya que el proyecto esta desplegado en railway podemos acceder a el a travez de la siguiente url
  ```
  https://goreactmongo-production.up.railway.app/
- ```   
+ ``` 
+ 
+ ## MOGODB
+
+ - Instalamos paquete para leer una cadena de conexión de MongoDB desde una variable de entorno
+ ```
+ go get github.com/joho/godotenv
+ ```
+ 
+ # CLIENT
+ - Usamos vite y typeScript para crear el proyecto frontend 
+ - Por alguna razon la configuracion de proxy en el vite.config para establecer la url del server, dio error en el server al momento de comprobar las peticiones http, por lo que se opto por usar una variable de entornor en vite en un archivo .env  para la url, sin embargo hay que tomar en cuenta que en vite se maneja distinto, incluso desde la declaracion que debe empezar por VITE como se muestra en la primera linea , y se lo llama como se muestra en la segunda linea
+ ```
+ VITE_URLSERVER=http://localhost:3000/api/v1
+ ```
+ ```
+  await axios.post(import.meta.env.VITE_URLSERVER+"/users"); 
+ ```
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
