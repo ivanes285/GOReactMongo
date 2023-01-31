@@ -4,7 +4,7 @@
 
 ## Iniciamos el proyecto go con el comando
 
-- go mod init ES EQUIVALENTE en node a npm int  sin embargo nos pide ingresar la direccion de un repositorio donde se va alojar
+- go mod init ES EQUIVALENTE en node a npm int  sin embargo nos pide ingresar la ruta de su módulo, es decir la direccion de un repositorio donde se va alojar, Si se publica este módulo, debe ser una ruta desde la cual las herramientas de Go puedan permitir descargar su módulo.
 ```
 go mod init github.com/ivanes285/GOReactMongo  
 ```
