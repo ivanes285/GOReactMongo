@@ -9,7 +9,7 @@ go mod init github.com/ivanes285/GOReactMongo
 
 ### Instalacion de modulos
 
-- Instalamos un framework llamado fiber equivalente(express en js) para trabajar con go
+- Instalamos un framework llamado fiber equivalente(express en nodejs) para trabajar con go
 ```
 go get github.com/gofiber/fiber/v2
 ```
@@ -17,6 +17,10 @@ go get github.com/gofiber/fiber/v2
 ```
  "github.com/gofiber/fiber/v2/middleware/cors"
 ```
+- Para evitar parar el servidor y de nuevo ejecutarlo para aplicar los cambios se instalo el siguiente modulo equivalente (nodemon en nodejs)
+ ```
+ go install github.com/cosmtrek/air@latest
+ ```
 ### Ejecucion
 - Podemos compilar de forma normal con el comando 
 ```
