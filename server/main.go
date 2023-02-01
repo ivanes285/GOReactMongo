@@ -54,7 +54,7 @@ func run() error {
 
 
 	// STATIC FILES (REACT)
-	app.Static("/", "../client/dist") // Establecemos los archivos estáticos para el frontend en este caso desde (React)
+	app.Static("/", "../dist") // Establecemos los archivos estáticos para el frontend en este caso desde (React)
 
 
 	// PORT
