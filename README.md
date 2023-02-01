@@ -72,7 +72,7 @@ o tambien
   await axios.post(import.meta.env.VITE_URLSERVER+"/users"); 
  ```
  
- ## Ejecucion
+ ## Ejecución
  - Una vez que descargues el proyecto te colocas en la carpeta server , dentro de esta carpeta ejecutas el siguiente comando que lee los cambios y reinicia el servidor el segundo comando tambien ejecuta el servidor pero no lo reiniciará solo.
  ```
  air . 
