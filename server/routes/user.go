@@ -102,7 +102,7 @@ func getUserById(c *fiber.Ctx) error {
 		})
 	}
 
-	return c.Status(200).JSON(fiber.Map{"data": user})
+	return c.Status(200).JSON(fiber.Map{"user": user})
 }
 
 func updateUser(c *fiber.Ctx) error {
@@ -146,7 +146,7 @@ func updateUser(c *fiber.Ctx) error {
    } 
 	// return the user
 	return c.Status(status).JSON(fiber.Map{
-		"result": message,
+		"message": message,
 	})
 }
 
