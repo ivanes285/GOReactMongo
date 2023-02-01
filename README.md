@@ -81,6 +81,50 @@ o tambien
  go run . 
  ```
  
+ # Detalles de la aplicacion 
+ 
+ ## Backend (server)
+Aplicacion escrita en go , con conexcion a mongo db
+### Tecnologías
+
+- [x] GO
+- [x] Fiber framework de Go
+- [x] MongoDB
+
+
+## Variables de Entorno (server)
+Despues de clonar el proyecto debemos crear un archivo .env  en donde definiremos las siguientes variables de entorno 
+- PORT= 3000
+- MONGODB_URI=
+
+## Frontend
+
+### Tecnologías
+
+- [x] Aplicacion con vite
+- [x] TypeScript
+- [x] React js
+- [x] Node
+- [x] pnpm 
+- [x] Tailwind
+
+# Variables de Entorno
+Despues de clonar el proyecto debemos crear un archivo .env  en donde definiremos las siguientes variables de entorno 
+- VITE_URLSERVER= 
+
+ ### Preview
+
+
+<p align="center">
+    <img src="./assets/taskpage.png" />
+<p/>
+
+
+<p align="center">
+    <img src="./assets/taskform.png" />
+<p/>
+
+
  
  
  
