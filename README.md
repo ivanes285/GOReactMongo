@@ -92,7 +92,7 @@ Aplicacion escrita en go , con conexcion a mongo db
 - [x] MongoDB
 
 
-## Variables de Entorno (server)
+### Variables de Entorno (server)
 Despues de clonar el proyecto debemos crear un archivo .env  en donde definiremos las siguientes variables de entorno 
 - PORT= 3000
 - MONGODB_URI=
@@ -108,7 +108,7 @@ Despues de clonar el proyecto debemos crear un archivo .env  en donde definiremo
 - [x] pnpm 
 - [x] Tailwind
 
-# Variables de Entorno
+### Variables de Entorno
 Despues de clonar el proyecto debemos crear un archivo .env  en donde definiremos las siguientes variables de entorno 
 - VITE_URLSERVER= 
 
@@ -116,12 +116,12 @@ Despues de clonar el proyecto debemos crear un archivo .env  en donde definiremo
 
 
 <p align="center">
-    <img src="./assets/taskpage.png" />
+    <img src="./assets/01.png" />
 <p/>
 
 
 <p align="center">
-    <img src="./assets/taskform.png" />
+    <img src="./assets/02.png" />
 <p/>
 
 
