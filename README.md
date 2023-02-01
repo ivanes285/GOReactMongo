@@ -51,9 +51,7 @@ o tambien
  ```
  ## Preview Deploy in Railway
  - Ya que el proyecto esta desplegado en railway podemos acceder a el a travez de la siguiente url
- ```
- https://goreactmongo-production.up.railway.app/
- ``` 
+ [Enlace para ver la aplicación](https://goreactmongo-production.up.railway.app/)
  
  ## MOGODB
 
