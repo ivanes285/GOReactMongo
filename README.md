@@ -72,9 +72,59 @@ o tambien
   await axios.post(import.meta.env.VITE_URLSERVER+"/users"); 
  ```
  
+ ## Ejecución
+ - Una vez que descargues el proyecto te colocas en la carpeta server , dentro de esta carpeta ejecutas el siguiente comando que lee los cambios y reinicia el servidor el segundo comando tambien ejecuta el servidor pero no lo reiniciará solo.
+ ```
+ air . 
+ ```
+ ```
+ go run . 
+ ```
  
+ # Detalles de la aplicacion 
  
- 
+ ## Backend (server)
+Aplicacion escrita en go , con conexcion a mongo db
+### Tecnologías
+
+- [x] GO
+- [x] Fiber framework de Go
+- [x] MongoDB
+
+
+### Variables de Entorno (server)
+Despues de clonar el proyecto debemos crear un archivo .env  en donde definiremos las siguientes variables de entorno 
+- PORT= 3000
+- MONGODB_URI=
+
+## Frontend
+
+### Tecnologías
+
+- [x] Aplicacion con vite
+- [x] TypeScript
+- [x] React js
+- [x] Node
+- [x] pnpm 
+- [x] Tailwind
+
+### Variables de Entorno
+Despues de clonar el proyecto debemos crear un archivo .env  en donde definiremos las siguientes variables de entorno 
+- VITE_URLSERVER= 
+
+ ### Preview
+
+
+<p align="center">
+    <img src="./assets/01.png" />
+<p/>
+
+
+<p align="center">
+    <img src="./assets/02.png" />
+<p/>
+
+
  
  
  
