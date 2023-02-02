@@ -47,6 +47,8 @@ func run() error {
 	app.Use(cors.New(cors.Config{ // Configuración de CORS para permitir el acceso a la API desde cualquier origen
 		AllowOrigins: "*",
 		AllowHeaders: "Origin, Content-Type, Accept",
+		AllowCredentials: true,
+        AllowMethods:     "GET,POST,HEAD,PUT,DELETE,PATCH,OPTIONS",
 	}))
 
 	// ROUTES
@@ -56,6 +58,12 @@ func run() error {
 	// STATIC FILES (REACT)
 	app.Static("/", "../dist") // Establecemos los archivos estáticos para el frontend en este caso desde (React)
 
+	app.Static("*", "./dist", fiber.Static{
+		Compress:      true,
+		ByteRange:     true,
+		Browse:        true,
+		Index:         "index.html",
+	  })
 
 	// PORT
 	PORT := os.Getenv("PORT") // Obtenemos el puerto de la variable de entorno PORT
