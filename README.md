@@ -39,15 +39,14 @@ o tambien
 ```
 
 ## Despliegue 
-- Desplegamos en railway a travez de un repositorio de github tomando en cuenta que el static file en este caso dist se 
- encuentra en el mismo nivel de la carperta server. 
+- Desplegamos en railway a travez de un repositorio de github tomando en cuenta que el static file en este caso dist esta al mismo nivel que el main.go
 - Para usar statics files en fiber realizamos la siguiente configuracion en el main.go
  ```
-  app.Static("/", "../dist") 
+  app.Static("/", "./dist") 
  ``` 
-- Nota: Por alguna razón que aun desconozco no se pudo desplegar en railway tomando en cuenta que el frontend(folder client) esta en el mismo nivel de la carpeta server, sin embargo se acostumbra a trabajar por separado el frontend y el backend. Por lo tanto se asume que la carpeta dist que contiene los archivos estaticos siempre se la traera del frontend. Por lo tanto la configuracion que no me permitió desplegar en railway es la siguiente.
+- Nota: El server esta al mismo nivel que la folder client que es nuestro frontent. Por lo tanto se asume que la carpeta dist que contiene los archivos estaticos siempre se la traera del frontend. Asi que la configuracion que no me permitió desplegar en railway es la siguiente.
  ```
-  app.Static("/", "../client/dist") 
+  app.Static("/", "./client/dist") 
  ```
  ## Preview Deploy in Railway
  - Ya que el proyecto esta desplegado en railway podemos acceder a el a travez de la siguiente url
