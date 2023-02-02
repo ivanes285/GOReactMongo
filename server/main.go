@@ -42,7 +42,7 @@ func run() error {
 	// SERVER
 	app := fiber.New() // Creamos una instancia de la librería Fiber para crear el servidor
 
-	app.Get("*", func(c *fiber.Ctx) error { // Creamos una ruta para que cuando se ingrese a una ruta que no exista se envíe el index.htm
+	app.Get("/*", func(c *fiber.Ctx) error { // Creamos una ruta para que cuando se ingrese a una ruta que no exista se envíe el index.htm
 		return c.SendFile("../dist/index.html")
 	})
 
@@ -50,11 +50,13 @@ func run() error {
 		return c.SendString("No puede desde aqui")
 	})
 
- 
+	app.Static("/static", "../dist")
+
+
 	// STATIC FILES (REACT)
 	app.Static("/", "../dist") // Establecemos los archivos estáticos para el frontend en este caso desde (React)
 		// STATIC FILES (REACT)
-	app.Static("*", "../dist") // Establecemos los archivos estáticos para el frontend en este caso desde (React)
+	app.Static("/*", "../dist") // Establecemos los archivos estáticos para el frontend en este caso desde (React)
 	
 	
 	
