@@ -35,7 +35,6 @@ func run() error {
 	if err != nil {
 		return err
 	}
-
 	defer db.CloseDB() // Defer permite ejecutar una función al final en este caso para cerrar la conexión a la base de datos
 
 	// SERVER
@@ -48,7 +47,7 @@ func run() error {
 		AllowOrigins: "*",
 		AllowHeaders: "Origin, Content-Type, Accept",
 		AllowCredentials: true,
-        AllowMethods:     "GET,POST,HEAD,PUT,DELETE,PATCH,OPTIONS",
+        AllowMethods: "GET,POST,HEAD,PUT,DELETE,PATCH,OPTIONS",
 	}))
 
 	// ROUTES
