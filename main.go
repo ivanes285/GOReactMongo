@@ -55,19 +55,18 @@ func run() error {
 
 
 	// STATIC FILES (REACT)
-	app.Static("/", "../dist") // Establecemos los archivos estáticos para el frontend en este caso desde (React)
+	app.Static("/", "./dist") // Establecemos los archivos estáticos para el frontend en este caso desde (React)
 
-	
+	app.Get("*", func(c *fiber.Ctx)error{
+		return c.SendFile("./dist/index.html")
+	  })
+	  
 	// PORT
 	PORT := os.Getenv("PORT") // Obtenemos el puerto de la variable de entorno PORT
 	if PORT == "" {
 		PORT = "4000"
 	}
 
-	app.Get("*", func(c *fiber.Ctx)error{
-		return c.SendFile("../dist/index.html")
-	  })
-	  
 
 
 	//SERVER
