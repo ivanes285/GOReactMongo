@@ -48,7 +48,7 @@ o tambien
  ```
   app.Static("/", "./client/dist") 
  ```
- - Nota:Por una extraña razon que aun desconozco no lee la url del server como se muestra en la primera linea, sino  que tuve que volver a configurar y hacer un push como se muestra en la segunda linea 
+ - Nota:Por una extraña razon que aun desconozco no lee la url del server como se muestra en la primera linea, sino  que tuve que volver a configurar y establecer el dominio que me dio RailWay y hacer un push como se muestra en la segunda linea 
 ```
 VITE_URLSERVER=http://127.0.0.1:3000/api/v1
 ```
