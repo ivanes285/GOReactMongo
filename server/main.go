@@ -1,13 +1,9 @@
 package main
 
 import (
-	"errors"
 	"fmt"
 	"log"
 	"os"
-	"path"
-	"path/filepath"
-	"runtime"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
@@ -60,25 +56,9 @@ func run() error {
 
 	// STATIC FILES (REACT)
 	app.Static("/", "../dist") // Establecemos los archivos estáticos para el frontend en este caso desde (React)
-	// pwd, err := os.Getwd()
-	// if err != nil {
-	//     fmt.Println(err)
-	//     os.Exit(1)
-	// }
-
-	_, filename, _, ok := runtime.Caller(0)
-	if !ok {
-		return errors.New("unable to get the current filename")
-	}
-	dirname := filepath.Dir(filename)
-
-	app.Get("*", func(c *fiber.Ctx) error { // Creamos una ruta para que cuando se ingrese a una ruta que no exista se envíe el index.htm
-		// fmt.Println("rutaaaaa", dirname)
-		// fmt.Println("rutaaaaa", dirname + "../dist/index.html")
-		// fmt.Println("ruta con path",)
-		// log.Fatal(c.SendFile( "../dist/index.html"))
-		return c.SendFile(path.Join(dirname,"../dist/index.html"))
-	})
+	
+	
+	
 
 	// PORT
 	PORT := os.Getenv("PORT") // Obtenemos el puerto de la variable de entorno PORT
