@@ -41,6 +41,12 @@ func run() error {
 	// SERVER
 	app := fiber.New() // Creamos una instancia de la librería Fiber para crear el servidor
 
+	
+	// STATIC FILES (REACT)
+	app.Static("*", "../dist") // Establecemos los archivos estáticos para el frontend en este caso desde (React)
+	
+	
+
 	// MIDDLEWARES
 	app.Use(logger.New())         // logger permite mostrar en la consola las peticiones que se hacen a la API
 	app.Use(recover.New())        // recover permite mostrar en la consola los errores y no se caiga el servidor en el caso que se ejecute un panic
@@ -54,10 +60,6 @@ func run() error {
 	// ROUTES
 	routes.AddUsersGroup(app) // Agregamos las rutas de los usuarios
 
-	// STATIC FILES (REACT)
-	app.Static("*", "../dist") // Establecemos los archivos estáticos para el frontend en este caso desde (React)
-	
-	
 	
 
 	// PORT
