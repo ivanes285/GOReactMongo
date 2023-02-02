@@ -1,11 +1,10 @@
 package main
 
 import (
-
 	"fmt"
 	"log"
 	"os"
-	
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/logger"
@@ -41,28 +40,21 @@ func run() error {
 
 	// SERVER
 	app := fiber.New() // Creamos una instancia de la librería Fiber para crear el servidor
- 
-	// STATIC FILES (REACT)
-	app.Static("/dist", "../dist") // Establecemos los archivos estáticos para el frontend en este caso desde (React)
-	
-	
-	app.Get("*", func(c *fiber.Ctx) error { // Creamos una ruta para que cuando se ingrese a una ruta que no exista se envíe el index.htm
-		return c.SendFile("../dist/index.html")
-	})
-
 
 	// MIDDLEWARES
 	app.Use(logger.New())         // logger permite mostrar en la consola las peticiones que se hacen a la API
 	app.Use(recover.New())        // recover permite mostrar en la consola los errores y no se caiga el servidor en el caso que se ejecute un panic
 	app.Use(cors.New(cors.Config{ // Configuración de CORS para permitir el acceso a la API desde cualquier origen
-		AllowOrigins:     "*",
-		AllowCredentials: true,
-		AllowHeaders:     "Origin, Content-Type, Accept,Access-Control-Allow-Origin",
-		AllowMethods:     "GET,POST,HEAD,PUT,DELETE,PATCH,OPTIONS",
+		AllowOrigins: "*",
+		AllowHeaders: "Origin, Content-Type, Accept",
 	}))
 
 	// ROUTES
-	routes.AddUsersGroup(app) // Agregamos las rutas de los usuarios
+     routes.AddUsersGroup(app)   // Agregamos las rutas de los usuarios
+
+
+	// STATIC FILES (REACT)
+	app.Static("/", "../dist") // Establecemos los archivos estáticos para el frontend en este caso desde (React)
 
 
 	// PORT
