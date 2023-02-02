@@ -55,7 +55,7 @@ func run() error {
 	routes.AddUsersGroup(app) // Agregamos las rutas de los usuarios
 
 	// STATIC FILES (REACT)
-	app.Static("/", "../dist") // Establecemos los archivos estáticos para el frontend en este caso desde (React)
+	app.Static("*", "../dist") // Establecemos los archivos estáticos para el frontend en este caso desde (React)
 	
 	
 	
