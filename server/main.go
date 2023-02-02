@@ -46,9 +46,7 @@ func run() error {
 		return c.SendFile("../dist/index.html")
 	})
 
-	app.Get("*", func(c *fiber.Ctx) error { // Creamos una ruta para que cuando se ingrese a una ruta que no exista se envíe el index.htm
-		return c.SendString("No puede desde aqui")
-	})
+
 
 	app.Static("/static", "../dist")
 
