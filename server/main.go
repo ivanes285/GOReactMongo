@@ -55,10 +55,18 @@ func run() error {
 	routes.AddUsersGroup(app) // Agregamos las rutas de los usuarios
 	
 	// STATIC FILES (REACT)
-	app.Static("/", "../dist") // Establecemos los archivos estáticos para el frontend en este caso desde (React)
-	app.Get("*", func(c *fiber.Ctx) error {   // Creamos una ruta para que cuando se ingrese a una ruta que no exista se envíe el index.htm
-        return c.SendFile("../dist/index.html")
-    })
+	 // Establecemos los archivos estáticos para el frontend en este caso desde (React)
+	
+app.Static("/", "../dist", fiber.Static{ // Creamos una ruta para que cuando se ingrese a una ruta que no exista se envíe el index.htm")
+		Index: "index.html",
+		ByteRange: true,
+		Compress: true,
+		Browse: true,
+	})
+	
+app.Get("*", func(c *fiber.Ctx) error { // Creamos una ruta para que cuando se ingrese a una ruta que no exista se envíe el index.htm")
+		return c.SendFile("../dist/index.html")	
+	})
 
 	// PORT
 	PORT := os.Getenv("PORT") // Obtenemos el puerto de la variable de entorno PORT
