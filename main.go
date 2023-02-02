@@ -44,23 +44,23 @@ func run() error {
 	app.Use(logger.New())         // logger permite mostrar en la consola las peticiones que se hacen a la API
 	app.Use(recover.New())        // recover permite mostrar en la consola los errores y no se caiga el servidor en el caso que se ejecute un panic
 	app.Use(cors.New(cors.Config{ // Configuración de CORS para permitir el acceso a la API desde cualquier origen
-		AllowOrigins: "*",
-		AllowHeaders: "Origin, Content-Type, Accept",
+		Next:             nil,
+		AllowOrigins:     "*",
+		AllowHeaders:     "Origin, Content-Type, Accept, Content-Length, Accept-Language, Accept-Encoding, Connection, Access-Control-Allow-Origin",
 		AllowCredentials: true,
-        AllowMethods: "GET,POST,HEAD,PUT,DELETE,PATCH,OPTIONS",
+		AllowMethods:     "GET,POST,HEAD,PUT,DELETE,PATCH,OPTIONS",
 	}))
 
 	// ROUTES
-     routes.AddUsersGroup(app)   // Agregamos las rutas de los usuarios
-
+	routes.AddUsersGroup(app) // Agregamos las rutas de los usuarios
 
 	// STATIC FILES (REACT)
 	app.Static("/", "./dist") // Establecemos los archivos estáticos para el frontend en este caso desde (React)
 
-	app.Get("*", func(c *fiber.Ctx)error{
+	app.Get("*", func(c *fiber.Ctx) error {
 		return c.SendFile("./dist/index.html")
-	  })
-	  
+	})
+
 	// PORT
 	PORT := os.Getenv("PORT") // Obtenemos el puerto de la variable de entorno PORT
 	if PORT == "" {
