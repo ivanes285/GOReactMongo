@@ -48,6 +48,13 @@ o tambien
  ```
   app.Static("/", "./client/dist") 
  ```
+ - Nota:Por una extraña razon que aun desconozco no lee la url del server como se muestra en la primera linea, sino  que tuve que volver a configurar y hacer un push como se muestra en la segunda linea 
+```
+VITE_URLSERVER=http://127.0.0.1:3000/api/v1
+```
+```
+VITE_URLSERVER=https://goreactmongo-production.up.railway.app/api/v1
+```
  ## Preview Deploy in Railway
  - Ya que el proyecto esta desplegado en railway podemos acceder a el a travez de la siguiente url
  [Enlace para ver la aplicación](https://goreactmongo-production.up.railway.app/)
