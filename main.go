@@ -44,10 +44,10 @@ func run() error {
 	app.Use(logger.New())         // logger permite mostrar en la consola las peticiones que se hacen a la API
 	app.Use(recover.New())        // recover permite mostrar en la consola los errores y no se caiga el servidor en el caso que se ejecute un panic
 	app.Use(cors.New(cors.Config{ // Configuración de CORS para permitir el acceso a la API desde cualquier origen
-		AllowHeaders:     "Origin, Content-Type, Accept, Content-Length, Accept-Language, Accept-Encoding, Connection, Access-Control-Allow-Origin",
         AllowOrigins:     "*",
-        AllowCredentials: true,
         AllowMethods:     "GET,POST,HEAD,PUT,DELETE,PATCH,OPTIONS",
+		AllowHeaders:     "Origin, Content-Type, Accept, Content-Length, Accept-Language, Accept-Encoding, Connection, Access-Control-Allow-Origin",
+        AllowCredentials: true,
 	}))
 
 	// ROUTES
