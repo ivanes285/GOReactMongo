@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"path"
 	"path/filepath"
 	"runtime"
 
@@ -72,9 +73,11 @@ func run() error {
 	dirname := filepath.Dir(filename)
 
 	app.Get("*", func(c *fiber.Ctx) error { // Creamos una ruta para que cuando se ingrese a una ruta que no exista se envíe el index.htm
-		fmt.Println("rutaaaaa", dirname)
-		log.Fatal(c.SendFile(dirname + "/../dist/index.html"))
-		return c.SendFile("../dist/index.html")
+		// fmt.Println("rutaaaaa", dirname)
+		// fmt.Println("rutaaaaa", dirname + "../dist/index.html")
+		// fmt.Println("ruta con path",)
+		// log.Fatal(c.SendFile( "../dist/index.html"))
+		return c.SendFile(path.Join(dirname,"../dist/index.html"))
 	})
 
 	// PORT
