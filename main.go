@@ -35,7 +35,7 @@ func run() error {
 	if err != nil {
 		return err
 	}
-	defer db.CloseDB() // Defer permite ejecutar una función al final en este caso para cerrar la conexión a la base de datos
+	//defer db.CloseDB() // Defer permite ejecutar una función al final en este caso para cerrar la conexión a la base de datos
 
 	// SERVER
 	app := fiber.New() // Creamos una instancia de la librería Fiber para crear el servidor
@@ -67,10 +67,8 @@ func run() error {
 		PORT = "4000"
 	}
 
-
-
 	//SERVER
-	log.Fatal(app.Listen(":" + PORT)) // Iniciamos el servidor y si hay un error lo mostramos en la consola
+	app.Listen(":" + PORT) // Iniciamos el servidor y si hay un error lo mostramos en la consola
 	fmt.Println("Server is running on port", PORT)
 	return nil // retornamos nil porque no hay error
 }
