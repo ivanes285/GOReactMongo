@@ -57,7 +57,7 @@ func run() error {
 	// STATIC FILES (REACT)
 	app.Static("/", "../dist") // Establecemos los archivos estáticos para el frontend en este caso desde (React)
 
-	app.Static("*", "./dist", fiber.Static{
+	app.Static("*", "../dist", fiber.Static{
 		Compress:      true,
 		ByteRange:     true,
 		Browse:        true,
