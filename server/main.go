@@ -41,23 +41,15 @@ func run() error {
 
 	// SERVER
 	app := fiber.New() // Creamos una instancia de la librería Fiber para crear el servidor
-
-	app.Get("/*", func(c *fiber.Ctx) error { // Creamos una ruta para que cuando se ingrese a una ruta que no exista se envíe el index.htm
+ 
+	// STATIC FILES (REACT)
+	app.Static("/dist", "../dist") // Establecemos los archivos estáticos para el frontend en este caso desde (React)
+	
+	
+	app.Get("*", func(c *fiber.Ctx) error { // Creamos una ruta para que cuando se ingrese a una ruta que no exista se envíe el index.htm
 		return c.SendFile("../dist/index.html")
 	})
 
-
-
-	app.Static("/static", "../dist")
-
-
-	// STATIC FILES (REACT)
-	app.Static("/", "../dist") // Establecemos los archivos estáticos para el frontend en este caso desde (React)
-		// STATIC FILES (REACT)
-	app.Static("/*", "../dist") // Establecemos los archivos estáticos para el frontend en este caso desde (React)
-	
-	
-	
 
 	// MIDDLEWARES
 	app.Use(logger.New())         // logger permite mostrar en la consola las peticiones que se hacen a la API
